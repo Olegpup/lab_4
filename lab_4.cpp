@@ -1,25 +1,29 @@
-﻿#include <iostream>
+#include <iostream>
 #include <cmath>
 using namespace std;
 
-int Fact(int k) {
-    if (k == 0)
-        return 1;
-    if (k == 1)
-        return 1;
-    return k * Fact(k - 1);
-}
-
 int main() {
-    double x, a, result = 0;
-    int m, n;
-    cout << "Enter x: " << endl;
+    double result = 0;
+    int x = 0, n = 0, f = 1, m = 0;
+    cout << "Enter x: ";
     cin >> x;
-    cout << "Enter n: " << endl;
-    cin >> m;
-    for (n = 1; n <= m; n += 1) {
-        a = pow(x, n - 1) / Fact(n - 1);
-        result += a;
+    cout << "Enter n: ";
+    cin >> n;
+    for (int i = 0; i < n - 1; i++) {
+        if (i != 0 && i != 1) {
+            m = i;
+            f = 1;
+            while (m > 0) {
+                f *= m;
+                m--;
+            }
+        }
+        else {
+            f = 1;
+        }
+        result += pow(x, i - 1) / f;
+        f = 0;
     }
-    cout << "Result:" << result;
+    cout << result << endl;
+    return 0;
 }
