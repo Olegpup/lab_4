@@ -1,9 +1,16 @@
-from math import factorial
-x = float(input("Enter x: "))
-m = int(input("Enter n: "))
+f = 1
 result = 0
-for n in range(1, m + 1):
-    a = (x**(n - 1)) / factorial(n - 1)
-    result += a
+x = int(input("Enter x: "))
+n = int(input("Enter n: "))
+for i in range(0, n):
+    if i != 0 and i != 1:
+        m = i
+        f = 1
+        while m > 0:
+            f *= m
+            m -= 1
+    else:
+        f = 1
+    result += x ** (i - 1) / f
+    f = 0
 print("Result:", result)
-
