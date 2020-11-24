@@ -9,7 +9,7 @@ int main() {
     cin >> x;
     cout << "Enter n: ";
     cin >> n;
-    for (int i = 0; i < n - 1; i++) {
+    for (int i = 0; i <= n - 1; i++) {
         if (i != 0 && i != 1) {
             m = i;
             f = 1;
